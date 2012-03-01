@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>git - der einfache einstieg - kein schnick-schnack!</title>
+	<title>git - ein Einstieg f&uuml;r Selbtdenker!</title>
     <link href='http://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css" type="text/css">
 	<link rel="stylesheet" href="css/style.css" type="text/css">
@@ -25,84 +25,84 @@
 </head>
 <body>
     <div class="scrollblock block-title">
-        <h1>git - der einfache einstieg</h1>
-        <p>eine einfache anleitung um git zu lernen. kein schnick-schnack ;)</p>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-via="rogerdudler" data-url="http://rogerdudler.github.com/git-guide" data-size="large" data-related="rogerdudler" data-hashtags="git">Tweet</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <h1>git - ein Einstieg f&uuml;r Selbtdenker</h1>
+        <p>Der einfache Einstieg zum Umgang mit git.</p>
         <p class="meta">
             von <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a>
-            <br />dank an <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> und <a href="http://www.namics.com">Namics</a><br />
-            diese anleitung in <a href="index.html">english</a>, <a href="index.es.html">español</a>, <a href="index.fr.html">français</a>, <a href="index.it.html">italiano</a>, <a href="index.nl.html">nederlands</a>, <a href="index.pt_BR.html">português</a>, <a href="index.ru.html">русский</a>, <br/>
+	    <br />&Uuml;berarbeitet von <a href="https://github.com/michaelsd">Michael Graupner</a>
+            <br />Dank an <a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a> und <a href="http://www.namics.com">Namics</a><br />
+            Diese anleitung in <a href="index.html">english</a>, <a href="index.es.html">español</a>, <a href="index.fr.html">français</a>, <a href="index.it.html">italiano</a>, <a href="index.nl.html">nederlands</a>, <a href="index.pt_BR.html">português</a>, <a href="index.ru.html">русский</a>, <br/>
             <a href="index.ja.html">日本語</a>, <a href="index.zh.html">中文</a>, <a href="index.ko.html">한국어</a><br />
-            feedback auf <a href="https://github.com/rogerdudler/git-guide/issues">github</a>
+            Feedback auf <a href="https://github.com/rogerdudler/git-guide/issues">github</a><br />
         </p>
         <img src="img/arrow.png" alt="" />
     </div>
     <!-- setup -->
     <a name="setup"></a>
     <div class="scrollblock block-setup">
-        <h2>installation</h2>
+        <h2>Installation</h2>
         <p>
-            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">git für OSX herunterladen</a>
+            <a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">git für OSX als Installationsdatei herunterladen</a>
         </p>
+	<p>Installation via "brew install git" respektive "port install git-core"</p>
         <p>
-            <a href="http://code.google.com/p/msysgit/downloads/list?can=3">git für Windows herunterladen</a>
+            <a href="http://book.git-scm.com/2_installing_git.html">git für Linux herunterladen (Anleitung f&uuml;r die popul&auml;rsten Distributionen)</a>
         </p>
-        <p>
-            <a href="http://book.git-scm.com/2_installing_git.html">git für Linux herunterladen</a>
-        </p>
+	<p>Ubuntu: sudo apt-get install git-core</p>
     </div>
     <a name="create"></a>
     <div class="scrollblock block-create">
-        <h2>neues repository erstellen</h2>
+        <h2>Neues Repository erstellen</h2>
         <p>
-            erstelle ein neues verzeichnis, öffne es und führe <br />
+            Erstellt ein neues neues Verzeichnis und legt darin ein git repository an:
+	    <code>git init verzeichnis</code><br \>
+	    Um ein existierendes Verzeichnis unter git Verwaltung zu stellen, wechselt man in das Verzeichnis und f&uuml;hrt dort
             <code>git init</code><br />
-            aus, um ein neues git repository anzulegen.
+            aus.
         </p>
     </div>
     <a name="checkout"></a>
     <div class="scrollblock block-checkout">
-        <h2>ein repository auschecken</h2>
+        <h2>Ein Repository auschecken</h2>
         <p>
-            erstelle eine arbeitskopie, indem du folgenden befehl ausführst<br />
+            Erstellt eine Arbeitskopie, indem man folgenden Befehl ausführt<br />
             <code>git clone /pfad/zum/repository</code><br />
-            falls du ein entferntes repository verwendest, benutze<br />
-            <code>git clone benutzername@host:/pfad/zum/repository</code>
+            Falls ein entferntes Repository genutzt wird, benutzt man<br />
+            <code>git clone benutzername@host:/pfad/zum/repository</code><br \>
         </p>
     </div>
     <a name="trees"></a>
     <div class="scrollblock block-trees">
-        <h2>workflow</h2>
+        <h2>Workflow</h2>
         <p>
-            dein lokales repository besteht aus drei "instanzen", die von git verwaltet werden.
-            die erste ist deine <code>Arbeitskopie</code>, welche die echten dateien enthält.
-            die zweite ist der <code>Index</code>, welcher als zwischenstufe agiert und
-            zuguterletzt noch der <code>HEAD</code>, der auf deinen letzten commit zeigt.
+            Ein lokales Repository besteht aus drei Bereichen die von git verwaltet werden.
+            Der erste ist die <code>Arbeitskopie</code>, welche die Dateien enthält mit denen man arbeitet.
+            Der zweite ist der <code>Index</code>, welcher als Zwischenstufe agiert und
+            zuguterletzt noch <code>HEAD</code>, der auf den letzten Commit zeigt.
         </p>
         <img src="img/trees.png" alt="" />
     </div>
     <a name="add"></a>
     <div class="scrollblock block-add">
-        <h2>add &amp; commit</h2>
+        <h2>Add &amp; Commit</h2>
         <p>
-            du kannst änderungen vorschlagen (zum <b>Index</b> hinzufügen) mit<br />
-            <code>git add &lt;dateiname&gt;</code><br />
-            <code>git add *</code><br />
-            das ist der erste schritt im git workflow. du bestätigst deine änderungen mit<br />
-            <code>git commit -m "commit nachricht"</code><br />
-            jetzt befindet sich die änderung im <b>HEAD</b>, aber noch nicht im entfernten repository.
+            &Auml;nderungen vorschlagen (zum <b>Index</b> hinzufügen) durch<br />
+            <code>git add &lt;dateiname&gt;</code> f&uuml;r eine bestimmte Datei<br />
+            <code>git add *</code> f&uuml;r alle Dateien in einem Verzeichnis<br />
+            Das ist der erste Schritt im git Workflow. Man bestätigst &Auml;nderungen mit<br />
+            <code>git commit -m "commit Nachricht"</code><br />
+            Jetzt befindet sich die &Auml;nderung in <b>HEAD</b>, aber noch nicht im entfernten Repository.
         </p>
     </div>
     <a name="push"></a>
     <div class="scrollblock block-remote">
-        <h2>änderungen hochladen</h2>
+        <h2>&Auml;nderungen ans Remote Repository übertragen</h2>
         <p>
-            die änderungen sind jetzt im <b>HEAD</b> deines lokalen repositories. Um die änderungen an dein entferntes repository zu senden, führe <br />
+            Die &Auml;nderungen sind jetzt in <b>HEAD</b> des lokalen Repositories. Um die &Auml;nderungen an ein entferntes Repository zu senden, führt man <br />
             <code>git push origin master</code><br />
-            aus. du kannst <i>master</i> auch mit einem beliebigen anderen branch ersetzen. mehr über branches erfährst du später.
+            aus. Man kann <i>master</i> auch mit einem beliebigen anderen Branch ersetzen. Mehr über Branches erfahren wir später.
             <br /><br />
-            wenn du dein lokales repository nicht von einem entfernten geklont hast und du diese aber mit einem anderen repository verbinden möchtest, musst du dieses mit <br />
+            Wenn man ein lokales Repository nicht von einem entfernten geklont hast und du diese aber mit einem anderen repository verbinden möchtest, musst du dieses mit <br />
             <code>git remote add origin &lt;server&gt;</code><br />
             hinzufügen. jetzt bist du bereit deine änderungen hochzuladen<br />
 
